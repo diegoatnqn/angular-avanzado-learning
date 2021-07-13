@@ -7,42 +7,50 @@
         <!-----  ------>
 
         <app-sin-estado [producto]="item"
-                        (productoSeleccionado)="onProductoSeleccionado($event)"></app-sin-estado>
+                        (productoSeleccionado)="onProductoSeleccionado($event)"
+                        (productoDesSeleccionado)="onProductoDesSeleccionado($event)"></app-sin-estado>
 
         <!-----  ------>
       </div>
     </div>
   </section>
 
-  <section>
-    <div *ngIf="itemsComprados.length > 0">
-      <div class="columns">
-        <nav class="panel is-three-quarter column">
-          <p class="panel-heading">
-            Detalle de Compra
-          </p>
+  <!--<section>
+    
+      <div *ngIf="itemsComprados.length > 0">
+        <div class="columns">
+          <nav class="panel is-three-quarter column">
+            <p class="panel-heading">
+              Shopping Cart
+            </p>
 
-          <div class="panel-block" *ngFor="let item of itemsComprados">
-            {{ item.titulo }}
-            <span class="item-price">
-              {{ item.precio | currency }}
-            </span>
-          </div>
-        </nav>
-      </div>
-
-      <div class="columns">
-        <div class="column is-fullwidth">
-          <div class="is-pulled-right">
-            <div class="is is-one-quarter ">
-              <h2 class="title">Total {{ getPrecioTotal() | currency }}</h2>
+            <div class="panel-block" *ngFor="let item of itemsComprados">
+              {{ item.titulo }}
+              <span class="item-price">
+                {{ item.precio | currency }}
+              </span>
             </div>
-            <button class="button is-link  is-pulled-right is-danger">
-              BUY NOW
-            </button>
+          </nav>
+        </div>
+
+        <div class="columns">
+          <div class="column is-fullwidth">
+            <div class="is-pulled-right">
+              <div class="is is-one-quarter ">
+                <h2 class="title">Total {{ getPrecioTotal() | currency }}</h2>
+              </div>
+              <button class="button is-link  is-pulled-right is-danger"
+                      (click)="realizarPago()">
+                BUY NOW
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    
+  </section>-->
 </div>
+<app-shopping-cart-status [precio]="precioTotal"
+                          [modeloDeTienda]="modeloTienda.tiendaItems"
+                          (pagar)="onPagar()"></app-shopping-cart-status>
+<app-alerta-confirmacion></app-alerta-confirmacion>

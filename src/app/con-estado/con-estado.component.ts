@@ -62,6 +62,7 @@ export class ConEstadoComponent implements OnInit {
   realizarPago() {
     this.alertChild.mostrar();
   };
+
   onPagar() {
     this.realizarPago();
   }

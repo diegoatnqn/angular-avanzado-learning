@@ -17,7 +17,8 @@ export class SinEstadoComponent implements OnInit {
   @Output() productoSeleccionado: EventEmitter<Producto> = new EventEmitter();
   @Output() productoDesSeleccionado: EventEmitter<Producto> = new EventEmitter();
   private disabled: boolean =false;
-  public accionCompra: string="";
+  public accionCompra: string = "";
+  public menuVisible: boolean = false;
 
   constructor() { }
 
@@ -38,5 +39,14 @@ export class SinEstadoComponent implements OnInit {
 
   isItemDisabled() {
     return !!this.disabled;
+  }
+
+  onRegularClick() {
+    this.menuVisible = false;
+  }
+
+  onRightClick() {
+    this.menuVisible = true;
+    return false;
   }
 }

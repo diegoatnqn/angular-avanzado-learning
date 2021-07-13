@@ -28,6 +28,38 @@ export class Tienda {
         titulo: "Chocolate Protein Bar",
         imagen: "proteinbar-chocolate.jpg",
         precio: 120
+      },
+      {
+        id: 4,
+        texto:
+          "H+ Sport is dedicated to creating eco-friendly, high-quality, nutrient-rich, nutritional products that enhance active lifestyles.",
+        titulo: "Pastillas suaves (para niños)",
+        imagen: "halls-mentholyptus-extra-strong.jpg",
+        precio: 10
+      },
+      {
+        id: 5,
+        texto:
+          "H+ Sport is dedicated to creating eco-friendly, high-quality, nutrient-rich, nutritional products that enhance active lifestyles.",
+        titulo: "Lápices feos",
+        imagen: "boligrafo-pelikan-pastel.jpg",
+        precio: 45
+      },
+      {
+        id: 6,
+        texto:
+          "H+ Sport is dedicated to creating eco-friendly, high-quality, nutrient-rich, nutritional products that enhance active lifestyles.",
+        titulo: "Mogul",
+        imagen: "rollo_mogul_frutales.png",
+        precio: 15
+      },
+      {
+        id: 7,
+        texto:
+          "H+ Sport is dedicated to creating eco-friendly, high-quality, nutrient-rich, nutritional products that enhance active lifestyles.",
+        titulo: "Bubalú",
+        imagen: "bazoka.jpg",
+        precio: 5
       }
     ];
   }

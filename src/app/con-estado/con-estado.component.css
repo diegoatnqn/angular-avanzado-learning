@@ -1,0 +1,6 @@
+section{
+    padding: 0 1rem;
+}
+.columns:not(.is-desktop) {
+  flex-wrap:wrap;
+}

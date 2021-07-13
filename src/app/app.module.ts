@@ -7,6 +7,7 @@ import { SinEstadoComponent } from './sin-estado/sin-estado.component';
 import { AlertaConfirmacionComponent } from './alerta-confirmacion/alerta-confirmacion.component';
 import { ShoppingCartStatusComponent } from './shopping-cart-status/shopping-cart-status.component';
 import { ContenedorImagenComponent } from './contenedor-imagen/contenedor-imagen.component'
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ContenedorImagenComponent } from './contenedor-imagen/contenedor-imagen
     ContenedorImagenComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

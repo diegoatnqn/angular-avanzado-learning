@@ -1,28 +1,39 @@
-# ComponentesAvanzado
+# Componentes - Avanzado (Curso linkedin learning)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.3.
+Para saber como comunicar componentes en angular
 
-## Development server
+## Estructura para no perderme
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+AppComponent -> conEstado -> SinEstado, shoppingCartStatus,AlertaConfirmacion <br>
+<hr>
 
-## Code scaffolding
+### App Con estado
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Envía a hijo "SinEstado" un item con el nombre "producto". Recibe eventos de seleccion o deseleccion.<br>
+Envia a hijo "ShoppingCartStatus" un precio total y el arreglo de items.<br>
+Activa o desactiva AlertaConfirmacion con @ViewChild(AlertaConfirmacionComponent, { static: false })<br>
+    
+<hr>
 
-## Build
+### App Sin estado (Stateless component)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Recibe un producto del padre:<br>
+    @Input() producto!: Producto;<br><br>
 
-## Running unit tests
+Envia eventos a padre: <br>
+    @Output() productoSeleccionado: EventEmitter<Producto> = new EventEmitter();<br>
+    @Output() productoDesSeleccionado: EventEmitter<Producto> = new EventEmitter();
+<br>
+  <hr>
+  
+### App Shopping Cart Status <br>
+Recibe del padre un precio y un arreglo de items:<br>
+    @Input() precio!: number;<br>
+    @Input()  modeloDeTienda!: Array<Producto>;<br><br>
+Envia un evento :<br>
+  @Output() pagar: EventEmitter<null> = new EventEmitter();<br>
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-#angular avanzado curso
+  Muestra elementos en el carrito segun estado de cada item del arreglo<br>
+  *ngIf="item.status == 'active'"<br>
+  <hr>
+  # <a href="https://angular-componentes-avanzado.vercel.app/" target="_blank">DEMO</a>

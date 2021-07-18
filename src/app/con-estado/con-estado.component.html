@@ -53,4 +53,4 @@
 <app-shopping-cart-status [precio]="precioTotal"
                           [modeloDeTienda]="modeloTienda.tiendaItems"
                           (pagar)="onPagar()"></app-shopping-cart-status>
-<app-alerta-confirmacion></app-alerta-confirmacion>
+<app-alerta-confirmacion (clicado)="pagoAccept()"></app-alerta-confirmacion>

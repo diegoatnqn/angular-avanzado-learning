@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 
 @Component({
   selector: "app-alerta-confirmacion",
@@ -7,6 +7,7 @@ import { Component, OnInit } from "@angular/core";
 })
 export class AlertaConfirmacionComponent implements OnInit {
   public active: Boolean;
+  @Output() clicado: EventEmitter<null> = new EventEmitter();
 
   constructor() {
     this.active = false;
@@ -16,6 +17,7 @@ export class AlertaConfirmacionComponent implements OnInit {
 
   ocultar() {
     this.active = false;
+    this.clicado.emit();
   }
 
   mostrar() {

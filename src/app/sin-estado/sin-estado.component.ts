@@ -12,15 +12,17 @@ import { Producto } from '../interfaces/producto';
 })
 export class SinEstadoComponent implements OnInit {
   @Input()
-    producto!: Producto;
-
+  producto!: Producto;
+  
   @Output() productoSeleccionado: EventEmitter<Producto> = new EventEmitter();
   @Output() productoDesSeleccionado: EventEmitter<Producto> = new EventEmitter();
-  private disabled: boolean =false;
+  private disabled: boolean = false;
   public accionCompra: string = "";
   public menuVisible: boolean = false;
 
-  constructor() { }
+  constructor() {
+    
+  }
 
   ngOnInit() {
     this.accionCompra = `BUY FOR $${this.producto.precio}`;
@@ -49,4 +51,5 @@ export class SinEstadoComponent implements OnInit {
     this.menuVisible = true;
     return false;
   }
-}
+
+ }

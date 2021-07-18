@@ -33,9 +33,9 @@ export class ShoppingCartStatusComponent implements OnInit, OnChanges, DoCheck, 
 
   ngOnChanges(cambios: SimpleChanges) {
     console.log(cambios);
-    if (cambios.precio.currentValue < cambios.precio.previousValue) {
-      alert("¿Seguro que deseas sacar items?");
-    }
+    //if (cambios.precio.currentValue < cambios.precio.previousValue) {
+    //  alert("¿Seguro que deseas sacar items?");
+    //}
   }
 
   ngDoCheck() {
